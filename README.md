@@ -56,20 +56,20 @@ The following metrics are from the training script's evaluation results.
 | Support Vector Machine | Achieved the highest AUC (0.9045), F1-score (0.6900), and MCC (0.5811). It provides the strongest overall balance across the reported training evaluation metrics. |
 | **Overall Winner for the Dataset** | **Support Vector Machine (SVM)** is selected as the overall winner based on its highest AUC, F1-score, and MCC. KNN achieved the highest accuracy, so the preferred model may depend on whether accuracy or a balance of evaluation metrics is the main priority. |
 
-### Streamlit Test Results – Accuracy
+### Streamlit Test Results
 
-The Streamlit application was also used to evaluate the models on the uploaded test dataset. The observed test accuracies were:
+The Streamlit application was also used to evaluate the models on the uploaded test dataset. The observed test metrics were:
 
-| ML Model Name | Streamlit Test Accuracy |
-|---|---:|
-| Logistic Regression | 80.57% |
-| Decision Tree | 79.50% |
-| KNN | **82.29%** |
-| Naive Bayes | 58.78% |
-| Support Vector Machine (SVM) | 80.84% |
+| ML Model Name | Streamlit Test Accuracy | Streamlit Test AUC | Streamlit Test Precision | Streamlit Test Recall | Streamlit Test F1 | Streamlit Test MCC |
+|---|---|---|---|---|---|---:|
+| Logistic Regression | 80.87% | 90.48% | 56.41% | 83.80% | 67.43% | 56.75% |
+| Decision Tree | 80.03% | 89.60% | 55.10% | 83.65% |  66.43% | 55.41% |
+| KNN | **82.89%** | 86.03% | 65.40% | 58.53% | 61.77% | 50.92% |
+| Naive Bayes | 59.19% | 80.95% | 35.89% | 92.51% | 51.17% | 36.03% | 
+| Support Vector Machine (SVM) | 81.22% | 90.42% | 56.80% | 85.60% | 68.28% | 58.07% |
 
-The uploaded test dataset contained 15,060 records: 11,360 records in the `<=50K` class and 3,700 records in the `>50K` class.
+The uploaded test dataset contained 16,281 records: 12,435 records in the `<=50K` class and 3,846 records in the `>50K` class.
 
 The Streamlit application displays a classification report, prediction distribution, evaluation metrics, and a CSV download of prediction results for the selected model.
 
-**Note:** The six-metric comparison table above contains the training-script evaluation results supplied for this README. The Streamlit screenshots supplied so far show class-wise reports and accuracy for test data; the complete set of six test metrics for every model has not been provided as one comparable table.
+**Note:** The six-metric comparison table above contains the training-script evaluation results as well as the Streamlit test data metrics for every model has been provided as one comparable table.
