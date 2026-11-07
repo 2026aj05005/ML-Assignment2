@@ -145,7 +145,7 @@ if os.path.exists("results/metrics.csv"):
 
         st.dataframe(
             training_results,
-            use_container_width=True
+            width="stretch"
         )
 
 
@@ -192,7 +192,7 @@ def load_test_dataset(uploaded_file):
 
     # Remove extra whitespace from text values
     for col in df.select_dtypes(
-        include=["object"]
+        include=["object", "str"]
     ).columns:
 
         df[col] = df[col].str.strip()
@@ -230,8 +230,7 @@ def load_test_dataset(uploaded_file):
         required_columns.append("income")
 
     df.dropna(
-        subset=required_columns,
-        inplace=True
+        subset=required_columns
     )
 
     if df.empty:
@@ -241,7 +240,7 @@ def load_test_dataset(uploaded_file):
         )
 
     # Reset index
-    df.reset_index(drop=True, inplace=True)
+    df.reset_index(drop=True)
 
     return df, has_target
 
@@ -271,7 +270,7 @@ if uploaded_file is not None:
 
         st.dataframe(
             df.head(10),
-            use_container_width=True
+            width="stretch"
         )
 
         # ------------------------------------------
@@ -499,7 +498,7 @@ if uploaded_file is not None:
 
             st.dataframe(
                 report_df,
-                use_container_width=True
+                width="stretch"
             )
 
             # Add actual values to download
@@ -552,7 +551,7 @@ if uploaded_file is not None:
 
         st.dataframe(
             pred_count,
-            use_container_width=True
+            width="stretch"
         )
 
         # ------------------------------------------
@@ -615,5 +614,5 @@ else:
 
     st.dataframe(
         model_info,
-        use_container_width=True
+        width="stretch"
     )
