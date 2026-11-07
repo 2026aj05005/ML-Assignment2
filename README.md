@@ -54,7 +54,7 @@ The following metrics are from the training script's evaluation results.
 | KNN | Achieved the highest accuracy (82.86%) and precision (0.6765). However, its recall was 0.5972, meaning it missed a larger share of positive-class cases than the other stronger models. |
 | Naive Bayes | Achieved the highest recall (0.9334), but its accuracy (59.67%) and precision (0.3754) were low. It identifies many positive cases but also produces many false positives. |
 | Support Vector Machine | Achieved the highest AUC (0.9045), F1-score (0.6900), and MCC (0.5811). It provides the strongest overall balance across the reported training evaluation metrics. |
-| **Overall Winner for the Dataset** | **Support Vector Machine (SVM)** is selected as the overall winner based on its highest AUC, F1-score, and MCC. KNN achieved the highest accuracy, so the preferred model may depend on whether accuracy or a balance of evaluation metrics is the main priority. |
+| **Overall Winner for the Dataset** | **Support Vector Machine (SVM)** is selected as the overall winner based on its highest AUC (0.9045), F1-score (0.6900), and MCC (0.5811), indicating the strongest overall balance across the reported evaluation metrics. KNN achieved the highest accuracy (82.86%), so it may be preferred when overall classification accuracy is the primary objective. However, SVM is the preferred model when considering a balanced overall performance. |
 
 ### Streamlit Test Results
 
@@ -72,4 +72,4 @@ The uploaded test dataset contained 16,281 records: 12,435 records in the `<=50K
 
 The Streamlit application displays a classification report, prediction distribution, evaluation metrics, and a CSV download of prediction results for the selected model.
 
-**Note:** The six-metric comparison table above contains the training-script evaluation results as well as the Streamlit test data metrics for every model has been provided as one comparable table.
+**Note:** The training-script evaluation metrics and Streamlit test-data evaluation metrics are presented separately for all five models. This allows comparison of model performance during training evaluation and testing through the Streamlit application.
